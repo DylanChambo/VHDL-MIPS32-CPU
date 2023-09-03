@@ -1,0 +1,31 @@
+C:/Git/VHDL-MIPS32-CPU/test/test_alu.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_alu.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package Types
+-- Loading package ENV
+** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_alu.vhdl(10): (vcom-1516) Package "STD.ENV" does not exist in this language version.
+-- Compiling entity tb_alu
+-- Compiling architecture sim of tb_alu
+-- Loading entity ALU
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/alu.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/alu.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package Types
+-- Compiling entity ALU
+-- Compiling architecture Behavioural of ALU
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/alu.vhdl(30): (vcom-1272) Length of expected is 32; length of actual is 28.
+
+} {} {}}
