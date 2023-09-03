@@ -2,14 +2,14 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity instruction_mem is
+entity register_file is
     port (
         I_CLK : in std_logic;
         I_RST : in std_logic
     );
-end instruction_mem;
+end register_file;
 
-architecture behavioural of instruction_mem is
+architecture behavioural of register_file is
 
 begin
 

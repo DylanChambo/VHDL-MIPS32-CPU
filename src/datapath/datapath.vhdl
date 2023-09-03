@@ -22,7 +22,7 @@ entity datapath is
         -- HAZARD DETECTION
         I_PC_WRITE : in std_logic;
         I_IF_ID_WRITE : in std_logic;
-        -- OUTPUTS
+        -- CONTROL OUTPUTS
         O_INSTRUCTION : out std_logic_vector(31 downto 0); -- for control unit & hazard detection
         O_EX_MEM_REG_RD : out std_logic_vector(4 downto 0); -- for forwarding
         O_MEM_WB_REG_RD : out std_logic_vector(4 downto 0); -- for forwarding
