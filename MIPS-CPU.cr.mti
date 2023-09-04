@@ -32,6 +32,8 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
 -- Compiling entity register_file
 -- Compiling architecture behavioural of register_file
 
@@ -98,6 +100,18 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity hazard_detection_unit
 -- Compiling architecture behavioural of hazard_detection_unit
 
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package types
+-- Compiling entity data_mem
+-- Compiling architecture behavioural of data_mem
+
 } {} {}} C:/Git/VHDL-MIPS32-CPU/src/types.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/types.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -107,7 +121,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package STD_LOGIC_SIGNED
 -- Compiling package types
 
-} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl {0 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -118,15 +132,8 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package types
 -- Compiling entity datapath
 -- Compiling architecture behavioural of datapath
-** Error: (vcom-11) Could not find work.program_memory.
-** Error (suppressible): C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(37): (vcom-1195) Cannot find expanded name "work.program_memory".
-** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(38): near ")": syntax error
-** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(40): Statement cannot be labeled.
--- Loading entity control_unit
-** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(41): near ")": syntax error
-** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(43): VHDL Compiler exiting
 
-} {12.0 13.0 14.0 16.0 17.0 19.0} {}} C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
+} {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO

@@ -34,10 +34,10 @@ end datapath;
 architecture behavioural of datapath is
 
 begin
-    instruction_memory : entity work.program_memory
-        port map();
+    -- instruction_memory : entity work.program_memory
+    --     port map();
 
-    data : entity work.control_unit
-        port map();
+    -- data : entity work.control_unit
+    --     port map();
 
 end architecture;
