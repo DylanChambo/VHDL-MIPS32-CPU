@@ -14,18 +14,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling architecture sim of tb_alu
 -- Loading entity ALU
 
-} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_SIGNED
--- Loading package types
--- Compiling entity control_unit
--- Compiling architecture behavioural of control_unit
-
 } {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -45,6 +33,20 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity forwarding_unit
 -- Compiling architecture behavioural of forwarding_unit
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_register.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_register.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package ENV
+** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_register.vhdl(8): (vcom-1516) Package "STD.ENV" does not exist in this language version.
+-- Compiling entity tb_register_file
+-- Compiling architecture sim of tb_register_file
+-- Loading entity register_file
 
 } {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -120,18 +122,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_SIGNED
 -- Compiling package types
-
-} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_SIGNED
--- Loading package types
--- Compiling entity datapath
--- Compiling architecture behavioural of datapath
 
 } {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016

@@ -16,10 +16,15 @@ architecture behavioural of cpu is
     signal D_ID_EX_RS : unsigned(4 downto 0);
     signal D_ID_EX_RT : unsigned(4 downto 0);
 
+    signal C_BRANCH : std_logic;
+    signal C_IF_FLUSH : std_logic;
+    signal C_ID_FLSUH : std_logic;
+    signal C_EX_FLSUH : std_logic;
     signal C_REG_DST : std_logic;
     signal C_ALU_CONTROL : unsigned(3 downto 0);
     signal C_ALU_SRC : std_logic;
-    signal C_BRANCH : std_logic;
+    signal C_MEM_READ : std_logic;
+    signal C_MEM_WRITE : std_logic;
     signal C_MEM_TO_REG : std_logic;
     signal C_REG_WRITE : std_logic;
     signal C_FORWARD_SEL_A : unsigned(1 downto 0);
@@ -39,32 +44,43 @@ begin
             I_MEM_WB_REG_RD => D_MEM_WB_REG_RD,
             I_ID_EX_RS => D_ID_EX_RS,
             I_ID_EX_RT => D_ID_EX_RT,
+            O_BRANCH => C_BRANCH,
+            O_IF_FLUSH => C_IF_FLUSH,
+            O_ID_FLSUH => C_ID_FLSUH,
+            O_EX_FLSUH => C_EX_FLSUH,
             O_REG_DST => C_REG_DST,
             O_ALU_CONTROL => C_ALU_CONTROL,
             O_ALU_SRC => C_ALU_SRC,
-            O_BRANCH => C_BRANCH,
+            O_MEM_READ => C_MEM_READ,
+            O_MEM_WRITE => C_MEM_WRITE,
             O_MEM_TO_REG => C_MEM_TO_REG,
             O_REG_WRITE => C_REG_WRITE,
             O_FORWARD_SEL_A => C_FORWARD_SEL_A,
             O_FORWARD_SEL_B => C_FORWARD_SEL_B,
             O_PC_WRITE => C_PC_WRITE,
             O_IF_ID_WRITE => C_IF_ID_WRITE
+
         );
 
     datapath : entity work.datapath
         port map(
             I_CLK => I_CLK,
-            I_RST => I_RST
-            I_REG_DST
-            I_ALU_CONTROL
-            I_ALU_SRC
-            I_BRANCH
-            I_MEM_TO_REG
-            I_REG_WRITE
-            I_FORWARD_SEL_A
-            I_FORWARD_SEL_B
-            I_PC_WRITE
-            I_IF_ID_WRITE
+            I_RST => I_RST,
+            I_BRANCH => C_BRANCH,
+            I_IF_FLUSH => C_IF_FLUSH,
+            I_ID_FLSUH => C_ID_FLSUH,
+            I_EX_FLSUH => C_EX_FLSUH,
+            I_REG_DST => C_REG_DST,
+            I_ALU_CONTROL => C_ALU_CONTROL,
+            I_ALU_SRC => C_ALU_SRC,
+            I_MEM_READ => C_MEM_READ,
+            I_MEM_WRITE => C_MEM_WRITE,
+            I_MEM_TO_REG => C_MEM_TO_REG,
+            I_REG_WRITE => C_REG_WRITE,
+            I_FORWARD_SEL_A => C_FORWARD_SEL_A,
+            I_FORWARD_SEL_B => C_FORWARD_SEL_B,
+            I_PC_WRITE => C_PC_WRITE,
+            I_IF_ID_WRITE => C_IF_ID_WRITE,
             O_INSTRUCTION => D_INSTRUCTION,
             O_EX_MEM_REG_RD => D_EX_MEM_REG_RD,
             O_MEM_WB_REG_RD => D_MEM_WB_REG_RD,
