@@ -7,14 +7,75 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package STD_LOGIC_SIGNED
--- Loading package Types
+-- Loading package types
 -- Loading package ENV
 ** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_alu.vhdl(10): (vcom-1516) Package "STD.ENV" does not exist in this language version.
 -- Compiling entity tb_alu
 -- Compiling architecture sim of tb_alu
 -- Loading entity ALU
 
-} {} {}} C:/Git/VHDL-MIPS32-CPU/src/alu.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/alu.vhdl
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package types
+-- Compiling entity control_unit
+-- Compiling architecture behavioural of control_unit
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity register_file
+-- Compiling architecture behavioural of register_file
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity forwarding_unit
+-- Compiling architecture behavioural of forwarding_unit
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl {0 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package ENV
+** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl(6): (vcom-1516) Package "STD.ENV" does not exist in this language version.
+-- Compiling entity dutent_tb
+-- Compiling architecture sim of dutent_tb
+** Error: (vcom-11) Could not find work.dutent.
+** Error (suppressible): C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl(23): (vcom-1195) Cannot find expanded name "work.dutent".
+** Error: C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl(28): near ")": syntax error
+** Error: C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl(30): Statement cannot be labeled.
+** Error: C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl(44): VHDL Compiler exiting
+
+} {11.0 12.0 13.0 16.0} {}} C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package types
+-- Compiling entity instruction_mem
+-- Compiling architecture behavioural of instruction_mem
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl(32): (vcom-1283) Cannot reference file "hex_file" inside pure function "init_memory".
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl(35): (vcom-1283) Cannot reference file "hex_file" inside pure function "init_memory".
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -23,9 +84,65 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
 -- Loading package STD_LOGIC_SIGNED
--- Loading package Types
+-- Loading package types
 -- Compiling entity ALU
 -- Compiling architecture Behavioural of ALU
-** Warning: C:/Git/VHDL-MIPS32-CPU/src/alu.vhdl(30): (vcom-1272) Length of expected is 32; length of actual is 28.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl(30): (vcom-1272) Length of expected is 32; length of actual is 28.
 
-} {} {}}
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl {0 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package types
+-- Compiling entity data_mem
+-- Compiling architecture behavioural of data_mem
+** Error: C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl(28): (vcom-1136) Unknown identifier "L_RAM_ADDRESS".
+** Error: C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl(32): Illegal target for signal assignment.
+** Error: C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl(32): (vcom-1136) Unknown identifier "L_RAM_ADDRESS".
+** Error: C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl(34): Cannot drive signal 'O_DATA' of mode IN.
+** Error: C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl(34): (vcom-1136) Unknown identifier "L_RAM_ADDRESS".
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl(35): (vcom-1272) Length of expected is 32; length of actual is 16.
+** Error: C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl(36): VHDL Compiler exiting
+
+} {12.0 17.0 18.0 19.0} {}} C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity hazard_detection_unit
+-- Compiling architecture behavioural of hazard_detection_unit
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/types.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/types.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling package types
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl {0 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package types
+-- Compiling entity datapath
+-- Compiling architecture behavioural of datapath
+** Error: (vcom-11) Could not find work.program_memory.
+** Error (suppressible): C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(37): (vcom-1195) Cannot find expanded name "work.program_memory".
+** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(38): near ")": syntax error
+** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(40): Statement cannot be labeled.
+-- Loading entity control_unit
+** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(41): near ")": syntax error
+** Error: C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl(43): VHDL Compiler exiting
+
+} {12.0 13.0 14.0 16.0 17.0 19.0} {}}

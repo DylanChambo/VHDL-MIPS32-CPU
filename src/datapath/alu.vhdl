@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use ieee.std_logic_unsigned.all;
-use work.Types.all;
+use work.types.all;
 
 entity ALU is
     port (
@@ -23,7 +23,7 @@ begin
             when ALU_SUB => L_Result <= I_A - I_B;
             when ALU_AND => L_Result <= I_A and I_B;
             when ALU_OR => L_Result <= I_A or I_B;
-            when ALU_LESS_THAN =>
+            when ALU_SLT =>
                 if (I_A < I_B) then
                     L_Result <= x"00000001";
                 else
