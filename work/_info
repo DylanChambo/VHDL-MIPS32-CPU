@@ -26,9 +26,9 @@ V@azT[:MNciG]zb2S?i1nd0
 !s100 3aVAS]C@Pb3>K>K]OjbM:3
 Z11 OV;C;10.5b;63
 32
-Z12 !s110 1693788316
+Z12 !s110 1693789813
 !i10b 1
-Z13 !s108 1693788316.000000
+Z13 !s108 1693789813.000000
 Z14 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl|
 Z15 !s107 C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl|
 !i113 1
@@ -126,11 +126,11 @@ VGFIdRKFLn4:cd>Eizj:>d0
 !s100 CPGEn;G@;Y:6Jc>^iUZ6G3
 R11
 32
-R12
+Z31 !s110 1693789812
 !i10b 1
-R13
-Z31 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl|
-Z32 !s107 C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl|
+Z32 !s108 1693789812.000000
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl|
+Z34 !s107 C:/Git/VHDL-MIPS32-CPU/src/control/control.vhdl|
 !i113 1
 R16
 R17
@@ -148,16 +148,16 @@ V5@aYBZa8z3;^jGm6?4fJm0
 !s100 bR]:48[g<L>6kb=3OkWR=0
 R11
 32
-R12
-!i10b 1
-R13
 R31
+!i10b 1
 R32
+R33
+R34
 !i113 1
 R16
 R17
 Edata_mem
-w1693786189
+Z35 w1693789809
 R2
 R4
 R3
@@ -165,19 +165,41 @@ R6
 R7
 R8
 R0
-8C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
-FC:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
+Z36 8C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
+Z37 FC:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
 l0
 L6
-V=hH<6[<zhm;KiL3Fo:[932
-!s100 LBzVhVlY2^NOJ7`oBGE6K0
+V?BA7HQW]o?iM]lJV?ISEz2
+!s100 MZ@BiHbllO`YA9hUP^?jm2
 R11
 32
-Z33 !s110 1693788315
+R31
 !i10b 1
-Z34 !s108 1693788315.000000
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl|
-!s107 C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl|
+R32
+Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl|
+Z39 !s107 C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl|
+!i113 1
+R16
+R17
+Abehavioural
+R2
+R4
+R3
+R6
+R7
+R8
+Z40 DEx4 work 8 data_mem 0 22 ?BA7HQW]o?iM]lJV?ISEz2
+l23
+L19
+VQ;Jionh@cdQWSCj6^V@FX1
+!s100 K2cbl36ek>]B_Ac07N;fZ0
+R11
+32
+R31
+!i10b 1
+R32
+R38
+R39
 !i113 1
 R16
 R17
@@ -198,9 +220,9 @@ VnFk^Kaaob`SI;@_TnhCS>1
 !s100 Q`3e8C1EDD6^jQ]HPR@g]0
 R11
 32
-R33
+R31
 !i10b 1
-R34
+R32
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl|
 !s107 C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl|
 !i113 1
@@ -213,30 +235,30 @@ R6
 R7
 R8
 R0
-8C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
-FC:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
+Z41 8C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
+Z42 FC:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
 l0
 L8
 V;o19K>B[BRNB@M<djT2=R3
 !s100 kO1LTdIMn@DkTC@YHodUS3
 R11
 32
-R33
+!s110 1693788737
 !i10b 1
-R34
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl|
-!s107 C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl|
+!s108 1693788737.000000
+Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl|
+Z44 !s107 C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl|
 !i113 1
 R16
 R17
 Eforwarding_unit
-Z35 w1693776395
+Z45 w1693776395
 R6
 R7
 R8
 R0
-Z36 8C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl
-Z37 FC:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl
+Z46 8C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl
+Z47 FC:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl
 l0
 L5
 VgZ:YD_EczhA1N[HVSnR`10
@@ -246,8 +268,8 @@ R11
 R12
 !i10b 1
 R13
-Z38 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl|
-Z39 !s107 C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl|
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl|
+Z49 !s107 C:/Git/VHDL-MIPS32-CPU/src/control/forwarding.vhdl|
 !i113 1
 R16
 R17
@@ -265,19 +287,19 @@ R11
 R12
 !i10b 1
 R13
-R38
-R39
+R48
+R49
 !i113 1
 R16
 R17
 Ehazard_detection_unit
-Z40 w1693776390
+Z50 w1693776390
 R6
 R7
 R8
 R0
-Z41 8C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl
-Z42 FC:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl
+Z51 8C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl
+Z52 FC:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl
 l0
 L5
 V8abz=TD90;;^hdQBHK2893
@@ -287,8 +309,8 @@ R11
 R12
 !i10b 1
 R13
-Z43 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl|
-Z44 !s107 C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl|
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl|
+Z54 !s107 C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl|
 !i113 1
 R16
 R17
@@ -306,34 +328,34 @@ R11
 R12
 !i10b 1
 R13
-R43
-R44
+R53
+R54
 !i113 1
 R16
 R17
 Einstruction_mem
-Z45 w1693787500
+Z55 w1693787500
 R2
 R4
 R3
-Z46 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z56 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
 R6
 R7
 R8
 R0
-Z47 8C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl
-Z48 FC:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl
+Z57 8C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl
+Z58 FC:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl
 l0
 L8
 VO>`JAkiBkgHKGL<eQeKeb0
 !s100 iAb^I>lF@?^S5^MQM9^BY2
 R11
 32
-R33
+R31
 !i10b 1
-R34
-Z49 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl|
-Z50 !s107 C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl|
+R32
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl|
+Z60 !s107 C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl|
 !i113 1
 R16
 R17
@@ -341,44 +363,44 @@ Abehavioural
 R2
 R4
 R3
-R46
+R56
 R6
 R7
 R8
-Z51 DEx4 work 15 instruction_mem 0 22 O>`JAkiBkgHKGL<eQeKeb0
+Z61 DEx4 work 15 instruction_mem 0 22 O>`JAkiBkgHKGL<eQeKeb0
 l42
 L19
 V9^7mmR50cHW<hIbiR5VE70
 !s100 3N41lkdo78<_C<ILC8LMn1
 R11
 32
-R33
+R31
 !i10b 1
-R34
-R49
-R50
+R32
+R59
+R60
 !i113 1
 R16
 R17
 Eregister_file
-Z52 w1693779300
+Z62 w1693779300
 R6
 R7
 R8
 R0
-Z53 8C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl
-Z54 FC:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl
+Z63 8C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl
+Z64 FC:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl
 l0
 L5
 VPb>e26]6dUCb7k:GUelom2
 !s100 EWD1:WEiJMhP3MQoZ5:g02
 R11
 32
-R12
+R31
 !i10b 1
-R13
-Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl|
-Z56 !s107 C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl|
+R32
+Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl|
+Z66 !s107 C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl|
 !i113 1
 R16
 R17
@@ -393,16 +415,16 @@ VnTJX]RB891^9_fRzmBDR@2
 !s100 ggcb7>X24f2PU9LAz;DY@1
 R11
 32
-R12
+R31
 !i10b 1
-R13
-R55
-R56
+R32
+R65
+R66
 !i113 1
 R16
 R17
 Etb_alu
-Z57 w1693716327
+Z67 w1693716327
 R22
 R2
 R3
@@ -420,9 +442,9 @@ V4k5[22ZTYbT[QVP4e[2U[3
 !s100 2J7g5i9_<e0oQS5oB35H<1
 R11
 32
-R33
+Z68 !s110 1693789811
 !i10b 1
-R34
+Z69 !s108 1693789811.000000
 R26
 R27
 !i113 1
@@ -445,16 +467,16 @@ V<M?DzhCJ=XBXFZ7FX1aAQ0
 !s100 QAde67VKC<UT[<DnX9VAY3
 R11
 32
-R33
+R68
 !i10b 1
-R34
+R69
 R26
 R27
 !i113 1
 R16
 R17
-Etb_instruction_mem
-Z58 w1693788295
+Etb_data_mem
+Z70 w1693789684
 R22
 R2
 R3
@@ -464,25 +486,77 @@ R6
 R7
 R8
 R0
-Z59 8C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
-Z60 FC:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
+R41
+R42
+l0
+L12
+Vc@A3hI5661QUEdHF?@EnX3
+!s100 EFa=h2;2nIbzT>3C1DI>73
+R11
+32
+R68
+!i10b 1
+R69
+R43
+R44
+!i113 1
+R16
+R17
+Asim
+R40
+R22
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+DEx4 work 11 tb_data_mem 0 22 c@A3hI5661QUEdHF?@EnX3
+l24
+L15
+VjFeNWXeOCbLe5]ilUPVfi3
+!s100 j1VPg8_571JUWf^JcmAC]1
+R11
+32
+R68
+!i10b 1
+R69
+R43
+R44
+!i113 1
+R16
+R17
+Etb_instruction_mem
+Z71 w1693788422
+R22
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R0
+Z72 8C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
+Z73 FC:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
 l0
 L12
 VVCTT9Y5D[1<;;BJgcAX`33
 !s100 ==nU_^C9QfnfCI^]QoKzT1
 R11
 32
-R33
+R68
 !i10b 1
-R34
-Z61 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl|
-Z62 !s107 C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl|
+R69
+Z74 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl|
+Z75 !s107 C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl|
 !i113 1
 R16
 R17
 Asim
-R46
-R51
+R56
+R61
 R22
 R2
 R3
@@ -494,15 +568,15 @@ R8
 DEx4 work 18 tb_instruction_mem 0 22 VCTT9Y5D[1<;;BJgcAX`33
 l21
 L15
-VdRc]?QY:m?;f7m8cgUMnB3
-!s100 BRjRBQ?937Vh0HCDlQz`j0
+V;RkF97?MfnfaN6H[_>>Sb2
+!s100 [Bd7TCCI78I[g@5;iohWS3
 R11
 32
-R33
+R68
 !i10b 1
-R34
-R61
-R62
+R69
+R74
+R75
 !i113 1
 R16
 R17
@@ -521,9 +595,9 @@ V>92joeYPGc@m4aES@P0NZ0
 !s100 i9m^hzXI<oaSDGTGkoG@U2
 R11
 32
-R33
+R68
 !i10b 1
-R34
+R69
 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Git/VHDL-MIPS32-CPU/src/types.vhdl|
 !s107 C:/Git/VHDL-MIPS32-CPU/src/types.vhdl|
 !i113 1
