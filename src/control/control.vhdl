@@ -14,21 +14,21 @@ entity control_unit is
         I_ID_EX_RS : in std_logic_vector(4 downto 0); -- for forwarding
         I_ID_EX_RT : in std_logic_vector(4 downto 0); -- for forwarding & hazard detection
         -- IF CONTROL SIGNALS
-        O_BRANCH : in std_logic;
-        O_IF_FLUSH : in std_logic;
+        O_BRANCH : out std_logic;
+        O_IF_FLUSH : out std_logic;
         -- EX CONTROL SIGNALS
         O_REG_DST : out std_logic;
         O_ALU_CONTROL : out ALUControl;
         O_ALU_SRC : out std_logic;
         -- MEM CONTROL SIGNALS
-        O_MEM_READ : in std_logic;
-        O_MEM_WRITE : in std_logic;
+        O_MEM_RD : out std_logic;
+        O_MEM_WR : out std_logic;
         -- WB CONTROL SIGNALS
         O_MEM_TO_REG : out std_logic;
         O_REG_WRITE : out std_logic;
         -- FORWARDING CONTROL SIGNALS
-        O_FORWARD_SEL_A : out std_logic;
-        O_FORWARD_SEL_B : out std_logic;
+        O_FORWARD_SEL_A : out std_logic_vector(1 downto 0);
+        O_FORWARD_SEL_B : out std_logic_vector(1 downto 0);
         -- HAZARD DETECTION
         O_PC_WRITE : out std_logic;
         O_IF_ID_WRITE : out std_logic

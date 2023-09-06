@@ -15,8 +15,8 @@ entity datapath is
         I_ALU_CONTROL : in ALUControl;
         I_ALU_SRC : in std_logic;
         -- MEM CONTROL SIGNALS
-        I_MEM_READ : in std_logic;
-        I_MEM_WRITE : in std_logic;
+        I_MEM_RD : in std_logic;
+        I_MEM_WR : in std_logic;
         -- WB CONTROL SIGNALS
         I_MEM_TO_REG : in std_logic;
         I_REG_WRITE : in std_logic;
@@ -31,8 +31,8 @@ entity datapath is
         O_INSTRUCTION : out std_logic_vector(31 downto 0); -- for control unit & hazard detection
         O_ID_EX_RT : out std_logic_vector(4 downto 0);-- for forwarding & hazard detection
         O_ID_EX_RS : out std_logic_vector(4 downto 0); -- for forwarding
-        O_EX_MEM_REG_RD : out std_logic_vector(4 downto 0); -- for forwarding
-        O_MEM_WB_REG_RD : out std_logic_vector(4 downto 0) -- for forwarding
+        O_EX_MEM_REG_DST : out std_logic_vector(4 downto 0); -- for forwarding
+        O_MEM_WB_REG_DST : out std_logic_vector(4 downto 0) -- for forwarding
     );
 end datapath;
 
@@ -51,6 +51,12 @@ architecture behavioural of datapath is
     signal E_ALU_RESULT : std_logic_vector(31 downto 0);
     signal E_MEM_WR_DATA : std_logic_vector(31 downto 0);
     signal E_DST_REG : std_logic_vector(4 downto 0);
+
+    signal M_RD_DATA : std_logic_vector(31 downto 0);
+    signal M_ALU_RESULT : std_logic_vector(31 downto 0);
+    signal M_DST_REG : std_logic_vector(4 downto 0);
+
+    signal L_WR_DATA : std_logic_vector(31 downto 0);
 begin
     instruction_fetch : entity work.instruction_fetch
         port map(
@@ -72,8 +78,8 @@ begin
             I_REG_WRITE => I_REG_WRITE,
             I_INSTRUCTION => F_INSTRUCTION,
             I_NEXT_PC => F_NEXT_PC,
-            I_WR_ADDR => open,
-            I_WR_DATA => open,
+            I_WR_ADDR => M_DST_REG,
+            I_WR_DATA => L_WR_DATA,
             O_RD_DATA_1 => D_RD_DATA_1,
             O_RD_DATA_2 => D_RD_DATA_2,
             O_REG_RS => D_REG_RS,
@@ -98,10 +104,33 @@ begin
             I_REG_RT => D_REG_RT,
             I_REG_RD => D_REG_RD,
             I_ALU_RESULT => E_ALU_RESULT,
-            I_WB_DATA => open,
+            I_WB_DATA => L_WR_DATA,
             O_ALU_RESULT => E_ALU_RESULT,
             O_MEM_WR_DATA => E_MEM_WR_DATA,
             O_DST_REG => E_DST_REG
         );
+
+    memory : entity work.memory
+        port map(
+            I_CLK => I_CLK,
+            I_RST => I_RST,
+            I_MEM_RD => I_MEM_RD,
+            I_MEM_WR => I_MEM_WR,
+            I_ALU_RESULT => E_ALU_RESULT,
+            I_WR_DATA => E_MEM_WR_DATA,
+            I_DST_REG => E_DST_REG,
+            O_RD_DATA => M_RD_DATA,
+            O_ALU_RESULT => M_ALU_RESULT,
+            O_DST_REG => M_DST_REG
+        );
+
+    L_WR_DATA <= M_ALU_RESULT when (I_MEM_TO_REG = '1') else
+        M_RD_DATA;
+
+    O_INSTRUCTION <= F_INSTRUCTION;
+    O_ID_EX_RS <= D_REG_RS;
+    O_ID_EX_RT <= D_REG_RT;
+    O_EX_MEM_REG_DST <= E_DST_REG;
+    O_MEM_WB_REG_DST <= M_DST_REG;
 
 end architecture;
