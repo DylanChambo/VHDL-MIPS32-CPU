@@ -7,11 +7,9 @@ entity datapath is
     port (
         I_CLK : in std_logic;
         I_RST : in std_logic;
-        -- ID CONTROL SIGNALS
+        -- IF CONTROL SIGNALS
         I_BRANCH : in std_logic;
         I_IF_FLUSH : in std_logic;
-        I_ID_FLSUH : in std_logic;
-        I_EX_FLSUH : in std_logic;
         -- EX CONTROL SIGNALS
         I_REG_DST : in std_logic;
         I_ALU_CONTROL : in ALUControl;
@@ -29,66 +27,57 @@ entity datapath is
         I_PC_WRITE : in std_logic;
         I_IF_ID_WRITE : in std_logic;
         -- CONTROL OUTPUTS
+        O_EQUALS : out std_logic; -- for control unit
         O_INSTRUCTION : out std_logic_vector(31 downto 0); -- for control unit & hazard detection
-        O_EX_MEM_REG_RD : out std_logic_vector(4 downto 0); -- for forwarding
-        O_MEM_WB_REG_RD : out std_logic_vector(4 downto 0); -- for forwarding
+        O_ID_EX_RT : out std_logic_vector(4 downto 0);-- for forwarding & hazard detection
         O_ID_EX_RS : out std_logic_vector(4 downto 0); -- for forwarding
-        O_ID_EX_RT : out std_logic_vector(4 downto 0) -- for forwarding & hazard detection
+        O_EX_MEM_REG_RD : out std_logic_vector(4 downto 0); -- for forwarding
+        O_MEM_WB_REG_RD : out std_logic_vector(4 downto 0) -- for forwarding
     );
 end datapath;
 
 architecture behavioural of datapath is
-    signal L_R_WR_ADDR : std_logic_vector(4 downto 0);
-    signal L_R_WR_DATA : std_logic_vector(31 downto 0);
-    signal L_R_RD_ADDR_1 : std_logic_vector(4 downto 0);
-    signal L_R_RD_ADDR_2 : std_logic_vector(4 downto 0);
-    signal L_ALU_A : std_logic_vector(31 downto 0);
-    signal L_ALU_B : std_logic_vector(31 downto 0);
-    signal L_DM_ADDR : std_logic_vector(31 downto 0);
-    signal L_DM_DATA : std_logic_vector(31 downto 0);
+    signal F_INSTRUCTION : std_logic_vector(31 downto 0);
+    signal F_NEXT_PC : std_logic_vector(31 downto 0);
 
-    signal R_RD_DATA_1 : std_logic_vector(31 downto 0);
-    signal R_RD_DATA_2 : std_logic_vector(31 downto 0);
-
-    signal ALU_RESULT : std_logic_vector(31 downto 0);
-    signal ALU_ZERO : std_logic;
-
-    signal DM_DATA : std_logic_vector(31 downto 0);
+    signal D_RD_DATA_1 : std_logic_vector(31 downto 0);
+    signal D_RD_DATA_2 : std_logic_vector(31 downto 0);
+    signal D_REG_RS : std_logic_vector(4 downto 0);
+    signal D_REG_RT : std_logic_vector(4 downto 0);
+    signal D_REG_RD : std_logic_vector(4 downto 0);
+    signal D_IMMIDIATE : std_logic_vector(15 downto 0);
+    signal D_NEXT_PC : std_logic_vector(31 downto 0);
 begin
-    instruction_memory : entity work.instruction_mem
-        port map(
-            I_PC => IM_PC,
-            O_INSTRUCTION => IM_INSTRUCTION
-        );
-
-    register_file : entity work.register_file
-        port map(
-            I_CLK => I_CLK
-            I_RST => I_RST
-            I_WR_ADDR => L_R_WR_ADDR
-            I_WR_DATA => L_R_WR_DATA
-            I_WR_EN => I_REG_WRITE
-            I_RD_ADDR_1 => L_R_RD_ADDR_1
-            I_RD_ADDR_2 => L_R_RD_ADDR_2
-            O_RD_DATA_1 => R_RD_DATA_1,
-            O_RD_DATA_2 => R_RD_DATA_2
-        );
-
-    alu : entity work.alu
-        port map(
-            I_A => L_ALU_A
-            I_B => L_ALU_B
-            I_CONTROL => I_ALU_CONTROL
-            O_RESULT => ALU_RESULT
-            O_ZERO => ALU_ZERO
-        );
-
-    data_memory : entity work.data_mem
+    instruction_fetch : entity work.instruction_fetch
         port map(
             I_CLK => I_CLK,
-            I_ADDR => L_DM_ADDR,
-            I_DATA => L_DM_DATA,
-            I_RD_EN => I_MEM_READ,
-            I_WR_EN => I_MEM_WRITE,
-            O_DATA : DM_Data
+            I_RST => I_RST,
+            I_NEW_PC => D_NEXT_PC,
+            I_BRANCH => I_BRANCH,
+            I_IF_FLUSH => I_IF_FLUSH,
+            I_PC_WRITE => I_PC_WRITE,
+            I_IF_ID_WRITE => I_IF_ID_WRITE,
+            O_INSTRUCTUION => F_INSTRUCTION,
+            O_NEXT_PC => F_NEXT_PC
         );
+
+    instruction_decode : entity work.instruction_decode
+        port map(
+            I_CLK => I_CLK,
+            I_RST => I_RST,
+            I_REG_WRITE => I_REG_WRITE,
+            I_INSTRUCTION => F_INSTRUCTION,
+            I_NEXT_PC => F_NEXT_PC,
+            I_WR_ADDR => open,
+            I_WR_DATA => open,
+            O_RD_DATA_1 => D_RD_DATA_1,
+            O_RD_DATA_2 => D_RD_DATA_2,
+            O_REG_RS => D_REG_RS,
+            O_REG_RT => D_REG_RT,
+            O_REG_RD => D_REG_RD,
+            O_IMMIDIATE => D_IMMIDIATE,
+            O_NEXT_PC => D_NEXT_PC,
+            O_REG_EQ => O_EQUALS
+        );
+
+end architecture;

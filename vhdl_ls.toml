@@ -1,0 +1,6 @@
+[libraries]
+
+# Defines library work
+work.files = [
+  'src/**/*.vhdl',
+]
