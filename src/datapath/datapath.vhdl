@@ -21,8 +21,8 @@ entity datapath is
         I_MEM_TO_REG : in std_logic;
         I_REG_WRITE : in std_logic;
         -- FORWARDING CONTROL SIGNALS
-        I_FORWARD_SEL_A : in std_logic;
-        I_FORWARD_SEL_B : in std_logic;
+        I_FORWARD_SEL_A : in std_logic_vector(1 downto 0);
+        I_FORWARD_SEL_B : in std_logic_vector(1 downto 0);
         -- HAZARD DETECTION
         I_PC_WRITE : in std_logic;
         I_IF_ID_WRITE : in std_logic;
@@ -47,6 +47,10 @@ architecture behavioural of datapath is
     signal D_REG_RD : std_logic_vector(4 downto 0);
     signal D_IMMIDIATE : std_logic_vector(15 downto 0);
     signal D_NEXT_PC : std_logic_vector(31 downto 0);
+
+    signal E_ALU_RESULT : std_logic_vector(31 downto 0);
+    signal E_MEM_WR_DATA : std_logic_vector(31 downto 0);
+    signal E_DST_REG : std_logic_vector(4 downto 0);
 begin
     instruction_fetch : entity work.instruction_fetch
         port map(
@@ -78,6 +82,26 @@ begin
             O_IMMIDIATE => D_IMMIDIATE,
             O_NEXT_PC => D_NEXT_PC,
             O_REG_EQ => O_EQUALS
+        );
+
+    execution : entity work.execution
+        port map(
+            I_CLK => I_CLK,
+            I_ALU_CONTROL => I_ALU_CONTROL,
+            I_ALU_SRC => I_ALU_SRC,
+            I_FORWARD_SEL_A => I_FORWARD_SEL_A,
+            I_FORWARD_SEL_B => I_FORWARD_SEL_B,
+            I_REG_DST => I_REG_DST,
+            I_RD_DATA_1 => D_RD_DATA_1,
+            I_RD_DATA_2 => D_RD_DATA_2,
+            I_IMMIDIATE => D_IMMIDIATE,
+            I_REG_RT => D_REG_RT,
+            I_REG_RD => D_REG_RD,
+            I_ALU_RESULT => E_ALU_RESULT,
+            I_WB_DATA => open,
+            O_ALU_RESULT => E_ALU_RESULT,
+            O_MEM_WR_DATA => E_MEM_WR_DATA,
+            O_DST_REG => E_DST_REG
         );
 
 end architecture;
