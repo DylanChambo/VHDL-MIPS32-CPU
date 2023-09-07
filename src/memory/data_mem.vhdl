@@ -9,6 +9,7 @@ entity data_mem is
     );
     port (
         I_CLK : in std_logic;
+        I_RST : in std_logic;
         I_ADDR : in std_logic_vector(31 downto 0);
         I_DATA : in std_logic_vector(31 downto 0);
         I_RD_EN, I_WR_EN : in std_logic;
@@ -24,7 +25,9 @@ begin
     process (I_CLK)
     begin
         if (rising_edge(I_CLK)) then
-            if (I_WR_EN = '1') then
+            if (I_RST = '1') then
+                L_RAM <= ((others => (others => '0')));
+            elsif (I_WR_EN = '1') then
                 L_RAM(to_integer(unsigned(L_RAM_ADDR))) <= I_DATA;
             end if;
         end if;

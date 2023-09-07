@@ -24,9 +24,7 @@ architecture behavioural of instruction_mem is
     function init_memory(hex_file_name : in string) return ROM is
         file hex_file : text open read_mode is hex_file_name;
         variable hex_line : line;
-        variable T_BV : std_logic_vector(31 downto 0);
         variable T_MEM : ROM := (others => (others => '0'));
-        variable i : integer := 0;
     begin
         for i in ROM'range loop
             if endfile(hex_file) then
