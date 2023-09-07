@@ -9,7 +9,6 @@ entity cpu is
         I_RST : in std_logic
     );
 end cpu;
-
 architecture behavioural of cpu is
     signal D_INSTRUCTION : std_logic_vector(31 downto 0);
     signal D_EQUALS : std_logic;
@@ -36,7 +35,6 @@ begin
     control_unit : entity work.control_unit
         port map(
             I_CLK => I_CLK,
-            I_RST => I_RST,
             I_INSTRUCTION => D_INSTRUCTION,
             I_EQUALS => D_EQUALS,
             I_EX_MEM_REG_RD => D_EX_MEM_REG_DST,

@@ -87,6 +87,16 @@ begin
             O_ALU_CONTROL => O_ALU_CONTROL
         );
 
+    hazard_detection_unit : entity work.hazard_detection_unit
+        port map(
+            I_MEM_READ => L_EX_MEM_RD,
+            I_INSTUCTION => I_INSTRUCTION,
+            I_REG_RT => I_ID_EX_RT,
+            O_FLUSH => H_FLUSH,
+            O_IF_ID_WRITE => O_IF_ID_WRITE,
+            O_PC_WRITE => O_PC_WRITE
+        );
+
     process (I_CLK)
     begin
         if rising_edge(I_CLK) then
