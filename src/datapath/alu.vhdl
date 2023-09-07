@@ -13,7 +13,7 @@ entity ALU is
 end ALU;
 
 architecture Behavioural of ALU is
-    signal L_Result : std_logic_vector(31 downto 0);
+    signal L_Result : std_logic_vector(31 downto 0) := (others => '0');
 begin
     process (I_A, I_B, I_Control)
     begin

@@ -28,11 +28,11 @@ entity execution is
 end execution;
 
 architecture behavioural of execution is
-    signal L_ALU_A : std_logic_vector(31 downto 0);
-    signal L_ALU_B : std_logic_vector(31 downto 0);
-    signal L_REG_2 : std_logic_vector(31 downto 0);
-    signal L_DST_REG : std_logic_vector(4 downto 0);
-    signal A_RESULT : std_logic_vector(31 downto 0);
+    signal L_ALU_A : std_logic_vector(31 downto 0) := (others => '0');
+    signal L_ALU_B : std_logic_vector(31 downto 0) := (others => '0');
+    signal L_REG_2 : std_logic_vector(31 downto 0) := (others => '0');
+    signal L_DST_REG : std_logic_vector(4 downto 0) := (others => '0');
+    signal A_RESULT : std_logic_vector(31 downto 0) := (others => '0');
 begin
     alu : entity work.alu
         port map(

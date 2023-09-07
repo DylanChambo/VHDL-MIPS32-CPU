@@ -4,6 +4,9 @@ use ieee.numeric_std.all;
 use work.types.all;
 
 entity datapath is
+    generic (
+        INIT_FILE : string := "program.hex"
+    );
     port (
         I_CLK : in std_logic;
         I_RST : in std_logic;
@@ -37,28 +40,31 @@ entity datapath is
 end datapath;
 
 architecture behavioural of datapath is
-    signal F_INSTRUCTION : std_logic_vector(31 downto 0);
-    signal F_NEXT_PC : std_logic_vector(31 downto 0);
+    signal F_INSTRUCTION : std_logic_vector(31 downto 0) := (others => '0');
+    signal F_NEXT_PC : std_logic_vector(31 downto 0) := (others => '0');
 
-    signal D_RD_DATA_1 : std_logic_vector(31 downto 0);
-    signal D_RD_DATA_2 : std_logic_vector(31 downto 0);
-    signal D_REG_RS : std_logic_vector(4 downto 0);
-    signal D_REG_RT : std_logic_vector(4 downto 0);
-    signal D_REG_RD : std_logic_vector(4 downto 0);
-    signal D_IMMIDIATE : std_logic_vector(15 downto 0);
-    signal D_NEXT_PC : std_logic_vector(31 downto 0);
+    signal D_RD_DATA_1 : std_logic_vector(31 downto 0) := (others => '0');
+    signal D_RD_DATA_2 : std_logic_vector(31 downto 0) := (others => '0');
+    signal D_REG_RS : std_logic_vector(4 downto 0) := (others => '0');
+    signal D_REG_RT : std_logic_vector(4 downto 0) := (others => '0');
+    signal D_REG_RD : std_logic_vector(4 downto 0) := (others => '0');
+    signal D_IMMIDIATE : std_logic_vector(31 downto 0) := (others => '0');
+    signal D_NEXT_PC : std_logic_vector(31 downto 0) := (others => '0');
 
-    signal E_ALU_RESULT : std_logic_vector(31 downto 0);
-    signal E_MEM_WR_DATA : std_logic_vector(31 downto 0);
-    signal E_DST_REG : std_logic_vector(4 downto 0);
+    signal E_ALU_RESULT : std_logic_vector(31 downto 0) := (others => '0');
+    signal E_MEM_WR_DATA : std_logic_vector(31 downto 0) := (others => '0');
+    signal E_DST_REG : std_logic_vector(4 downto 0) := (others => '0');
 
-    signal M_RD_DATA : std_logic_vector(31 downto 0);
-    signal M_ALU_RESULT : std_logic_vector(31 downto 0);
-    signal M_DST_REG : std_logic_vector(4 downto 0);
+    signal M_RD_DATA : std_logic_vector(31 downto 0) := (others => '0');
+    signal M_ALU_RESULT : std_logic_vector(31 downto 0) := (others => '0');
+    signal M_DST_REG : std_logic_vector(4 downto 0) := (others => '0');
 
-    signal L_WR_DATA : std_logic_vector(31 downto 0);
+    signal L_WR_DATA : std_logic_vector(31 downto 0) := (others => '0');
 begin
     instruction_fetch : entity work.instruction_fetch
+        generic map(
+            INIT_FILE => INIT_FILE
+        )
         port map(
             I_CLK => I_CLK,
             I_RST => I_RST,
@@ -124,7 +130,7 @@ begin
             O_DST_REG => M_DST_REG
         );
 
-    L_WR_DATA <= M_ALU_RESULT when (I_MEM_TO_REG = '1') else
+    L_WR_DATA <= M_ALU_RESULT when I_MEM_TO_REG = '1' else
         M_RD_DATA;
 
     O_INSTRUCTION <= F_INSTRUCTION;

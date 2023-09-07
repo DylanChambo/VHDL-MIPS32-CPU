@@ -21,7 +21,7 @@ entity memory is
 end memory;
 
 architecture behavioural of memory is
-    signal D_DATA : std_logic_vector(31 downto 0);
+    signal D_DATA : std_logic_vector(31 downto 0) := (others => '0');
 begin
     data_memory : entity work.data_mem
         port map(
