@@ -6,7 +6,6 @@ use work.types.all;
 entity control_unit is
     port (
         I_CLK : in std_logic;
-        I_RST : in std_logic;
         -- DATAPATH REGISTERS
         I_INSTRUCTION : in std_logic_vector(31 downto 0); -- for control & hazard detection
         I_EQUALS : in std_logic; -- for control
@@ -42,6 +41,8 @@ architecture behavioural of control_unit is
     signal C_EX_FLUSH : std_logic;
     signal C_REG_DST : std_logic;
     signal C_ALU_OP : std_logic_vector(2 downto 0);
+    signal C_FUNC : std_logic_vector(5 downto 0);
+    signal C_OPCODE : std_logic_vector(5 downto 0);
     signal C_ALU_SRC : std_logic;
     signal C_MEM_RD : std_logic;
     signal C_MEM_WR : std_logic;
@@ -51,6 +52,8 @@ architecture behavioural of control_unit is
     signal H_FLUSH : std_logic;
 
     signal L_ALU_OP : std_logic_vector(2 downto 0);
+    signal L_FUNC : std_logic_vector(5 downto 0);
+    signal L_OPCODE : std_logic_vector(5 downto 0);
     signal L_EX_MEM_RD : std_logic;
     signal L_EX_MEM_WR : std_logic;
     signal L_EX_REG_WR : std_logic;
@@ -67,11 +70,21 @@ begin
             O_BRANCH => C_BRANCH,
             O_REG_DST => C_REG_DST,
             O_ALU_OP => C_ALU_OP,
+            O_OPCODE => C_OPCODE,
+            O_FUNC => C_FUNC,
             O_ALU_SRC => C_ALU_SRC,
             O_MEM_RD => C_MEM_RD,
             O_MEM_WR => C_MEM_WR,
             O_MEM_TO_REG => C_MEM_TO_REG,
             O_REG_WR => C_REG_WR
+        );
+
+    alu_control : entity work.alu_control
+        port map(
+            I_ALU_OP => L_ALU_OP,
+            I_OPCODE => L_OPCODE,
+            I_FUNC => L_FUNC,
+            O_ALU_CONTROL => O_ALU_CONTROL
         );
 
     process (I_CLK)
@@ -81,7 +94,9 @@ begin
             if (C_ID_FLUSH = '1' or H_FLUSH = '1') then
                 O_REG_DST <= '0';
                 O_ALU_SRC <= '0';
-                L_ALU_OP <= "000";
+                L_ALU_OP <= "00";
+                L_FUNC <= (others => '0');
+                L_OPCODE <= (others => '0');
                 L_EX_MEM_RD <= '0';
                 L_EX_MEM_WR <= '0';
                 L_EX_REG_WR <= '0';
@@ -89,6 +104,8 @@ begin
             else
                 O_REG_DST <= C_REG_DST;
                 L_ALU_OP <= C_ALU_OP;
+                L_FUNC <= C_FUNC;
+                L_OPCODE <= C_OPCODE;
                 O_ALU_SRC <= C_ALU_SRC;
                 L_EX_MEM_RD <= C_MEM_RD;
                 L_EX_MEM_WR <= C_MEM_WR;

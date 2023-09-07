@@ -14,6 +14,8 @@ entity main_control is
         -- EX Signals
         O_REG_DST : out std_logic;
         O_ALU_OP : out std_logic_vector(1 downto 0);
+        O_FUNC : out std_logic_vector(5 downto 0);
+        O_OPCODE : out std_logic_vector(5 downto 0);
         O_ALU_SRC : out std_logic;
         -- MEM Signals
         O_MEM_RD : out std_logic;
@@ -46,7 +48,6 @@ begin
         O_ALU_OP <= "00";
 
         case (I_INSTRUCTION(31 downto 26)) is
-
             when toOpCode(0) => -- R-Type
                 O_REG_DST <= '1';
                 O_REG_WR <= '1';
@@ -85,4 +86,7 @@ begin
         end case;
 
     end process;
+
+    O_FUNC <= I_INSTRUCTION(5 downto 0);
+    O_OPCODE <= I_INSTRUCTION(31 downto 26);
 end architecture;
