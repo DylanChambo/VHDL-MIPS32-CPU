@@ -9,22 +9,22 @@ A basic pipelined MIPS 32bit CPU created in VHDL to reinfornce my knowledge of C
 ## Instructions Implemented
 
 ### R-Type
-- [ ] add 
+- [x] add 
 - [ ] addu 
-- [ ] sub
+- [x] sub
 - [ ] subu
-- [ ] and
-- [ ] or
-- [ ] slt (Set Less Than)
+- [x] and
+- [x] or
+- [x] slt (Set Less Than)
 - [ ] sltu
       
 ### I-Type
-- [ ] addi
+- [x] addi
 - [ ] addiu
-- [ ] andi
-- [ ] ori
-- [ ] lw (Load Word)
-- [ ] sw (Save Word)
-- [ ] beq
-- [ ] slti 
+- [x] andi
+- [x] ori
+- [x] lw (Load Word)
+- [x] sw (Save Word)
+- [x] beq (Branch Equals)
+- [x] slti 
 - [ ] sltiu
