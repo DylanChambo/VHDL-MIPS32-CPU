@@ -6,13 +6,44 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
--- Loading package STD_LOGIC_SIGNED
 -- Loading package types
 -- Loading package ENV
 ** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_alu.vhdl(10): (vcom-1516) Package "STD.ENV" does not exist in this language version.
 -- Compiling entity tb_alu
 -- Compiling architecture sim of tb_alu
+-- Loading package NUMERIC_STD_UNSIGNED
 -- Loading entity ALU
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types
+-- Compiling entity alu_control
+-- Compiling architecture behavioural of alu_control
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(31): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(32): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(33): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(34): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(35): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(40): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(41): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(42): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/alu_control.vhdl(43): (vcom-1937) Choice in CASE statement alternative must be locally static.
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/instruction_decode.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/instruction_decode.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity instruction_decode
+-- Compiling architecture behavioural of instruction_decode
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading entity register_file
 
 } {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/register.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -31,6 +62,7 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD_UNSIGNED
 -- Compiling entity forwarding_unit
 -- Compiling architecture behavioural of forwarding_unit
 
@@ -48,6 +80,37 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling architecture sim of tb_register_file
 -- Loading entity register_file
 
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/mem.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/mem.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity memory
+-- Compiling architecture behavioural of memory
+-- Loading package types
+-- Loading entity data_mem
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types
+-- Compiling entity main_control
+-- Compiling architecture behavioural of main_control
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(51): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(56): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(60): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(63): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(66): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(69): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(72): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(75): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(78): (vcom-1937) Choice in CASE statement alternative must be locally static.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/main_control.vhdl(81): (vcom-1937) Choice in CASE statement alternative must be locally static.
+
 } {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -56,13 +119,49 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
--- Loading package STD_LOGIC_SIGNED
 -- Loading package types
 -- Loading package ENV
 ** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl(10): (vcom-1516) Package "STD.ENV" does not exist in this language version.
 -- Compiling entity tb_data_mem
 -- Compiling architecture sim of tb_data_mem
 -- Loading entity data_mem
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/instuction_fetch.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/instuction_fetch.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity instruction_fetch
+-- Compiling architecture behavioural of instruction_fetch
+-- Loading package std_logic_textio
+-- Loading package types
+-- Loading entity instruction_mem
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/control_unit.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/control_unit.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types
+-- Compiling entity control_unit
+-- Compiling architecture behavioural of control_unit
+-- Loading entity main_control
+-- Loading entity alu_control
+-- Loading entity hazard_detection_unit
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Loading entity forwarding_unit
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types
+-- Compiling entity data_mem
+-- Compiling architecture behavioural of data_mem
 
 } {} {}} C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -71,29 +170,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
 -- Loading package std_logic_textio
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_SIGNED
 -- Loading package types
 -- Compiling entity instruction_mem
 -- Compiling architecture behavioural of instruction_mem
-** Warning: C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl(32): (vcom-1283) Cannot reference file "hex_file" inside pure function "init_memory".
-** Warning: C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl(35): (vcom-1283) Cannot reference file "hex_file" inside pure function "init_memory".
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl(30): (vcom-1283) Cannot reference file "hex_file" inside pure function "init_memory".
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/memory/instruction_mem.vhdl(33): (vcom-1283) Cannot reference file "hex_file" inside pure function "init_memory".
 
-} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_UNSIGNED
--- Loading package STD_LOGIC_SIGNED
--- Loading package types
--- Compiling entity ALU
--- Compiling architecture Behavioural of ALU
-** Warning: C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl(30): (vcom-1272) Length of expected is 32; length of actual is 28.
-
-} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -101,27 +184,50 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity hazard_detection_unit
 -- Compiling architecture behavioural of hazard_detection_unit
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl(25): (vcom-1246) Range 10 downto 16 is null.
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/control/hazard_detection.vhdl(25): (vcom-1083) Implicit array operator "=" always returns FALSE (left length 5 is not equal to right length 0).
 
-} {} {}} C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/memory/data_mem.vhdl
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Loading package types
+-- Compiling entity ALU
+-- Compiling architecture Behavioural of ALU
+** Warning: C:/Git/VHDL-MIPS32-CPU/src/datapath/alu.vhdl(29): (vcom-1272) Length of expected is 32; length of actual is 28.
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/execution.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/execution.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_SIGNED
 -- Loading package types
--- Compiling entity data_mem
--- Compiling architecture behavioural of data_mem
+-- Compiling entity execution
+-- Compiling architecture behavioural of execution
+-- Loading package NUMERIC_STD_UNSIGNED
+-- Loading entity ALU
 
 } {} {}} C:/Git/VHDL-MIPS32-CPU/src/types.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/types.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
+-- Compiling package types
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/datapath/datapath.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Loading package std_logic_arith
--- Loading package STD_LOGIC_SIGNED
--- Compiling package types
+-- Loading package NUMERIC_STD
+-- Loading package types
+-- Compiling entity datapath
+-- Compiling architecture behavioural of datapath
+-- Loading entity instruction_fetch
+-- Loading entity instruction_decode
+-- Loading entity execution
+-- Loading entity memory
 
 } {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -131,7 +237,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Loading package std_logic_arith
 -- Loading package STD_LOGIC_UNSIGNED
--- Loading package STD_LOGIC_SIGNED
 -- Loading package types
 -- Loading package ENV
 ** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_instruction_mem.vhdl(10): (vcom-1516) Package "STD.ENV" does not exist in this language version.

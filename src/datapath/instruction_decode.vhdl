@@ -23,13 +23,13 @@ entity instruction_decode is
 end instruction_decode;
 
 architecture behavioural of instruction_decode is
-    signal L_REG_RS : std_logic_vector(4 downto 0);
-    signal L_REG_RT : std_logic_vector(4 downto 0);
-    signal L_REG_RD : std_logic_vector(4 downto 0);
-    signal L_IMMIDIATE : std_logic_vector(31 downto 0);
+    signal L_REG_RS : std_logic_vector(4 downto 0) := (others => '0');
+    signal L_REG_RT : std_logic_vector(4 downto 0) := (others => '0');
+    signal L_REG_RD : std_logic_vector(4 downto 0) := (others => '0');
+    signal L_IMMIDIATE : std_logic_vector(31 downto 0) := (others => '0');
 
-    signal R_RD_DATA_1 : std_logic_vector(31 downto 0);
-    signal R_RD_DATA_2 : std_logic_vector(31 downto 0);
+    signal R_RD_DATA_1 : std_logic_vector(31 downto 0) := (others => '0');
+    signal R_RD_DATA_2 : std_logic_vector(31 downto 0) := (others => '0');
 
 begin
     register_file : entity work.register_file
@@ -58,7 +58,7 @@ begin
         end if;
     end process;
 
-    O_NEXT_PC <= std_logic_vector(unsigned(I_NEXT_PC) + unsigned(L_IMMIDIATE & "00"));
+    O_NEXT_PC <= std_logic_vector(unsigned(I_NEXT_PC) + unsigned(L_IMMIDIATE(29 downto 0) & "00"));
     O_REG_EQ <= '1' when (R_RD_DATA_1 = R_RD_DATA_2) else
         '0';
 

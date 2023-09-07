@@ -4,6 +4,9 @@ use ieee.numeric_std.all;
 use work.types.all;
 
 entity cpu is
+    generic (
+        INIT_FILE : string := "program.hex"
+    );
     port (
         I_CLK : in std_logic;
         I_RST : in std_logic
@@ -58,6 +61,9 @@ begin
         );
 
     datapath : entity work.datapath
+        generic map(
+            INIT_FILE => INIT_FILE
+        )
         port map(
             I_CLK => I_CLK,
             I_RST => I_RST,

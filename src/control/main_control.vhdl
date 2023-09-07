@@ -59,30 +59,42 @@ begin
                 O_REG_WR <= '1';
             when toOpCode(43) => -- sw
                 O_ALU_SRC <= '1';
-                O_MEM_RD <= '1';
+                O_MEM_WR <= '1';
             when toOpCode(4) => -- beq
                 O_BRANCH <= '1';
                 O_ID_FLUSH <= '1';
             when toOpCode(8) => -- addi
                 O_ALU_SRC <= '1';
                 O_ALU_OP <= "11";
+                O_MEM_TO_REG <= '1';
+                O_REG_WR <= '1';
             when toOpCode(9) => -- addiu
                 O_ALU_SRC <= '1';
                 O_ALU_OP <= "11";
+                O_MEM_TO_REG <= '1';
+                O_REG_WR <= '1';
             when toOpCode(12) => -- andi
                 O_ALU_SRC <= '1';
                 O_ALU_OP <= "11";
+                O_MEM_TO_REG <= '1';
+                O_REG_WR <= '1';
             when toOpCode(13) => -- ori
                 O_ALU_SRC <= '1';
                 O_ALU_OP <= "11";
+                O_MEM_TO_REG <= '1';
+                O_REG_WR <= '1';
             when toOpCode(10) => -- slti
                 O_ALU_SRC <= '1';
                 O_ALU_OP <= "11";
+                O_MEM_TO_REG <= '1';
+                O_REG_WR <= '1';
             when toOpCode(11) => -- sltiu
                 O_ALU_SRC <= '1';
                 O_ALU_OP <= "11";
-            when others => -- NOP
-                O_IF_FLUSH <= '1';
+                O_MEM_TO_REG <= '1';
+                O_REG_WR <= '1';
+            when others =>
+                O_ID_FLUSH <= '0';
         end case;
 
     end process;

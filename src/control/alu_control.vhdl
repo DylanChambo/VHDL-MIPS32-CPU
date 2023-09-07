@@ -38,9 +38,9 @@ begin
             when "11" => -- ADDI
                 case I_OPCODE is
                     when toSixBit(8) => O_ALU_CONTROL <= ALU_ADD; -- ADDI
-                    when toSixBit(8) => O_ALU_CONTROL <= ALU_AND; -- ANDI
-                    when toSixBit(8) => O_ALU_CONTROL <= ALU_OR; -- ORI
-                    when toSixBit(8) => O_ALU_CONTROL <= ALU_SLT; -- SLTI
+                    when toSixBit(12) => O_ALU_CONTROL <= ALU_AND; -- ANDI
+                    when toSixBit(13) => O_ALU_CONTROL <= ALU_OR; -- ORI
+                    when toSixBit(10) => O_ALU_CONTROL <= ALU_SLT; -- SLTI
                     when others => O_ALU_CONTROL <= ALU_ADD;
                 end case;
             when others =>

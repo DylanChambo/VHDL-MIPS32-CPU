@@ -36,30 +36,30 @@ entity control_unit is
 end control_unit;
 
 architecture behavioural of control_unit is
-    signal C_BRANCH : std_logic;
-    signal C_ID_FLUSH : std_logic;
-    signal C_EX_FLUSH : std_logic;
-    signal C_REG_DST : std_logic;
-    signal C_ALU_OP : std_logic_vector(2 downto 0);
-    signal C_FUNC : std_logic_vector(5 downto 0);
-    signal C_OPCODE : std_logic_vector(5 downto 0);
-    signal C_ALU_SRC : std_logic;
-    signal C_MEM_RD : std_logic;
-    signal C_MEM_WR : std_logic;
-    signal C_REG_WR : std_logic;
-    signal C_MEM_TO_REG : std_logic;
+    signal C_BRANCH : std_logic := '0';
+    signal C_ID_FLUSH : std_logic := '0';
+    signal C_EX_FLUSH : std_logic := '0';
+    signal C_REG_DST : std_logic := '0';
+    signal C_ALU_OP : std_logic_vector(1 downto 0) := (others => '0');
+    signal C_FUNC : std_logic_vector(5 downto 0) := (others => '0');
+    signal C_OPCODE : std_logic_vector(5 downto 0) := (others => '0');
+    signal C_ALU_SRC : std_logic := '0';
+    signal C_MEM_RD : std_logic := '0';
+    signal C_MEM_WR : std_logic := '0';
+    signal C_REG_WR : std_logic := '0';
+    signal C_MEM_TO_REG : std_logic := '0';
 
-    signal H_FLUSH : std_logic;
+    signal H_FLUSH : std_logic := '0';
 
-    signal L_ALU_OP : std_logic_vector(2 downto 0);
-    signal L_FUNC : std_logic_vector(5 downto 0);
-    signal L_OPCODE : std_logic_vector(5 downto 0);
-    signal L_EX_MEM_RD : std_logic;
-    signal L_EX_MEM_WR : std_logic;
-    signal L_EX_REG_WR : std_logic;
-    signal L_MEM_REG_WR : std_logic;
-    signal L_EX_MEM_TO_REG : std_logic;
-    signal L_MEM_MEM_TO_REG : std_logic;
+    signal L_ALU_OP : std_logic_vector(1 downto 0) := (others => '0');
+    signal L_FUNC : std_logic_vector(5 downto 0) := (others => '0');
+    signal L_OPCODE : std_logic_vector(5 downto 0) := (others => '0');
+    signal L_EX_MEM_RD : std_logic := '0';
+    signal L_EX_MEM_WR : std_logic := '0';
+    signal L_EX_REG_WR : std_logic := '0';
+    signal L_MEM_REG_WR : std_logic := '0';
+    signal L_EX_MEM_TO_REG : std_logic := '0';
+    signal L_MEM_MEM_TO_REG : std_logic := '0';
 begin
     control : entity work.main_control
         port map(
@@ -95,6 +95,17 @@ begin
             O_FLUSH => H_FLUSH,
             O_IF_ID_WRITE => O_IF_ID_WRITE,
             O_PC_WRITE => O_PC_WRITE
+        );
+
+    forwarding_unit : entity work.forwarding_unit
+        port map(
+            I_MEM_WB_REG_WRITE => L_MEM_REG_WR,
+            I_MEM_WB_REG_RD => I_MEM_WB_REG_RD,
+            I_ID_EX_REG_RS => I_ID_EX_RS,
+            I_ID_EX_REG_RT => I_ID_EX_RT,
+            I_EX_MEM_REG_RD => I_EX_MEM_REG_RD,
+            O_FORWARD_A => O_FORWARD_SEL_A,
+            O_FORWARD_B => O_FORWARD_SEL_B
         );
 
     process (I_CLK)

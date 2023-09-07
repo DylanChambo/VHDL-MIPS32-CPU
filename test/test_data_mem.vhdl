@@ -16,7 +16,7 @@ architecture sim of tb_data_mem is
     constant clk_hz : integer := 1e9;
     constant clk_period : time := 1 sec / clk_hz;
     signal L_CLK : std_logic := '0';
-
+    signal L_RST : std_logic := '0';
     signal L_ADDR : std_logic_vector(31 downto 0) := (others => '0');
     signal L_DATA : std_logic_vector(31 downto 0) := (others => '0');
     signal L_RD_EN, L_WR_EN : std_logic := '0';
@@ -25,7 +25,7 @@ begin
     L_CLK <= not L_CLK after clk_period / 2;
 
     DUT : entity work.data_mem
-        port map(L_CLK, L_ADDR, L_DATA, L_RD_EN, L_WR_EN, D_DATA);
+        port map(L_CLK, L_RST, L_ADDR, L_DATA, L_RD_EN, L_WR_EN, D_DATA);
 
     SEQUENCER_PROC : process
     begin
