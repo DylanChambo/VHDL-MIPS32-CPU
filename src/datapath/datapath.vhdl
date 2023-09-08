@@ -4,9 +4,6 @@ use ieee.numeric_std.all;
 use work.types.all;
 
 entity datapath is
-    generic (
-        INIT_FILE : string := "program.hex"
-    );
     port (
         I_CLK : in std_logic;
         I_RST : in std_logic;
@@ -17,9 +14,6 @@ entity datapath is
         I_REG_DST : in std_logic;
         I_ALU_CONTROL : in ALUControl;
         I_ALU_SRC : in std_logic;
-        -- MEM CONTROL SIGNALS
-        I_MEM_RD : in std_logic;
-        I_MEM_WR : in std_logic;
         -- WB CONTROL SIGNALS
         I_MEM_TO_REG : in std_logic;
         I_REG_WRITE : in std_logic;
@@ -29,6 +23,12 @@ entity datapath is
         -- HAZARD DETECTION
         I_PC_WRITE : in std_logic;
         I_IF_ID_WRITE : in std_logic;
+        -- MEM OUTPUTS
+        I_INSTRUCTION : in std_logic_vector(31 downto 0);
+        I_DATA : in std_logic_vector(31 downto 0);
+        O_PC : out std_logic_vector(31 downto 0);
+        O_MEM_ADDR : out std_logic_vector(31 downto 0);
+        O_MEM_DATA : out std_logic_vector(31 downto 0);
         -- CONTROL OUTPUTS
         O_EQUALS : out std_logic; -- for control unit
         O_INSTRUCTION : out std_logic_vector(31 downto 0); -- for control unit & hazard detection
@@ -62,9 +62,6 @@ architecture behavioural of datapath is
     signal L_WR_DATA : std_logic_vector(31 downto 0) := (others => '0');
 begin
     instruction_fetch : entity work.instruction_fetch
-        generic map(
-            INIT_FILE => INIT_FILE
-        )
         port map(
             I_CLK => I_CLK,
             I_RST => I_RST,
@@ -73,7 +70,9 @@ begin
             I_IF_FLUSH => I_IF_FLUSH,
             I_PC_WRITE => I_PC_WRITE,
             I_IF_ID_WRITE => I_IF_ID_WRITE,
-            O_INSTRUCTUION => F_INSTRUCTION,
+            I_INSTRUCTION => I_INSTRUCTION,
+            O_PC => O_PC,
+            O_INSTRUCTION => F_INSTRUCTION,
             O_NEXT_PC => F_NEXT_PC
         );
 
@@ -116,15 +115,12 @@ begin
             O_DST_REG => E_DST_REG
         );
 
-    memory : entity work.memory
+    memory : entity work.memory_stage
         port map(
             I_CLK => I_CLK,
-            I_RST => I_RST,
-            I_MEM_RD => I_MEM_RD,
-            I_MEM_WR => I_MEM_WR,
             I_ALU_RESULT => E_ALU_RESULT,
-            I_WR_DATA => E_MEM_WR_DATA,
             I_DST_REG => E_DST_REG,
+            I_DATA => I_DATA,
             O_RD_DATA => M_RD_DATA,
             O_ALU_RESULT => M_ALU_RESULT,
             O_DST_REG => M_DST_REG
@@ -132,7 +128,8 @@ begin
 
     L_WR_DATA <= M_ALU_RESULT when I_MEM_TO_REG = '1' else
         M_RD_DATA;
-
+    O_MEM_ADDR <= E_ALU_RESULT;
+    O_MEM_DATA <= E_MEM_WR_DATA;
     O_INSTRUCTION <= F_INSTRUCTION;
     O_ID_EX_RS <= D_REG_RS;
     O_ID_EX_RT <= D_REG_RT;

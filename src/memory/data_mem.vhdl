@@ -2,10 +2,11 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 use work.types.all;
+use work.init_mem.all;
 
 entity data_mem is
     generic (
-        ADDR_WIDTH : integer := 10
+        INIT_MEM : T_MEM(0 to DATA_SIZE - 1)
     );
     port (
         I_CLK : in std_logic;
@@ -18,9 +19,8 @@ entity data_mem is
 end data_mem;
 
 architecture behavioural of data_mem is
-    type Mem is array (0 to (2 ** ADDR_WIDTH) - 1) of std_logic_vector (31 downto 0);
-    signal L_RAM : Mem := ((others => (others => '0')));
-    signal L_RAM_ADDR : std_logic_vector(ADDR_WIDTH - 1 downto 0);
+    signal L_RAM : T_Mem(0 to DATA_SIZE - 1) := INIT_MEM;
+    signal L_RAM_ADDR : std_logic_vector(29 downto 0);
 begin
     process (I_CLK)
     begin
@@ -32,7 +32,7 @@ begin
             end if;
         end if;
     end process;
-    L_RAM_ADDR <= I_ADDR(ADDR_WIDTH + 1 downto 2);
+    L_RAM_ADDR <= I_ADDR(31 downto 2);
 
     O_DATA <= L_RAM(to_integer(unsigned(L_RAM_ADDR))) when (I_RD_EN = '1') else
         x"00000000";

@@ -4,12 +4,18 @@ use ieee.numeric_std.all;
 use work.types.all;
 
 entity cpu is
-    generic (
-        INIT_FILE : string := "program.hex"
-    );
     port (
         I_CLK : in std_logic;
-        I_RST : in std_logic
+        I_RST : in std_logic;
+        I_INSTRUCTION : in std_logic_vector(31 downto 0);
+        I_DATA : in std_logic_vector(31 downto 0);
+        -- Mem Data
+        O_PC : out std_logic_vector(31 downto 0);
+        O_MEM_ADDR : out std_logic_vector(31 downto 0);
+        O_MEM_DATA : out std_logic_vector(31 downto 0);
+        -- Mem Control Signals
+        O_MEM_WR : out std_logic;
+        O_MEM_RD : out std_logic
     );
 end cpu;
 architecture behavioural of cpu is
@@ -25,8 +31,6 @@ architecture behavioural of cpu is
     signal C_REG_DST : std_logic;
     signal C_ALU_CONTROL : AluControl;
     signal C_ALU_SRC : std_logic;
-    signal C_MEM_RD : std_logic;
-    signal C_MEM_WR : std_logic;
     signal C_MEM_TO_REG : std_logic;
     signal C_REG_WR : std_logic;
     signal C_FORWARD_SEL_A : std_logic_vector(1 downto 0);
@@ -49,8 +53,8 @@ begin
             O_REG_DST => C_REG_DST,
             O_ALU_CONTROL => C_ALU_CONTROL,
             O_ALU_SRC => C_ALU_SRC,
-            O_MEM_RD => C_MEM_RD,
-            O_MEM_WR => C_MEM_WR,
+            O_MEM_RD => O_MEM_RD,
+            O_MEM_WR => O_MEM_WR,
             O_MEM_TO_REG => C_MEM_TO_REG,
             O_REG_WR => C_REG_WR,
             O_FORWARD_SEL_A => C_FORWARD_SEL_A,
@@ -61,9 +65,6 @@ begin
         );
 
     datapath : entity work.datapath
-        generic map(
-            INIT_FILE => INIT_FILE
-        )
         port map(
             I_CLK => I_CLK,
             I_RST => I_RST,
@@ -72,14 +73,17 @@ begin
             I_REG_DST => C_REG_DST,
             I_ALU_CONTROL => C_ALU_CONTROL,
             I_ALU_SRC => C_ALU_SRC,
-            I_MEM_RD => C_MEM_RD,
-            I_MEM_WR => C_MEM_WR,
             I_MEM_TO_REG => C_MEM_TO_REG,
             I_REG_WRITE => C_REG_WR,
             I_FORWARD_SEL_A => C_FORWARD_SEL_A,
             I_FORWARD_SEL_B => C_FORWARD_SEL_B,
             I_PC_WRITE => C_PC_WRITE,
             I_IF_ID_WRITE => C_IF_ID_WRITE,
+            I_INSTRUCTION => I_INSTRUCTION,
+            I_DATA => I_DATA,
+            O_PC => O_PC,
+            O_MEM_ADDR => O_MEM_ADDR,
+            O_MEM_DATA => O_MEM_DATA,
             O_INSTRUCTION => D_INSTRUCTION,
             O_EQUALS => D_EQUALS,
             O_EX_MEM_REG_DST => D_EX_MEM_REG_DST,
