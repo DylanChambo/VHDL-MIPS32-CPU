@@ -126,19 +126,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package STANDARD
 ** Error (suppressible): C:/Git/VHDL-MIPS32-CPU/src/memory/memory_map.vhdl(1): (vcom-1491) Empty source files.
 
-} {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_processor.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_processor.vhdl
-Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package types
--- Loading package ENV
-** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_processor.vhdl(8): (vcom-1516) Package "STD.ENV" does not exist in this language version.
--- Compiling entity tb_proc
--- Compiling architecture sim of tb_proc
--- Loading entity mips_processor
-
 } {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl {0 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_data_mem.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -166,6 +153,19 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package NUMERIC_STD
 -- Compiling entity instruction_fetch
 -- Compiling architecture behavioural of instruction_fetch
+
+} {} {}} C:/Git/VHDL-MIPS32-CPU/test/test_processor.vhdl {2 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/test/test_processor.vhdl
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types
+-- Loading package ENV
+** Warning: C:/Git/VHDL-MIPS32-CPU/test/test_processor.vhdl(8): (vcom-1516) Package "STD.ENV" does not exist in this language version.
+-- Compiling entity tb_proc
+-- Compiling architecture sim of tb_proc
+-- Loading entity mips_processor
 
 } {} {}} C:/Git/VHDL-MIPS32-CPU/src/mips_processor.vhdl {1 {vcom -work work -2002 -explicit -stats=none C:/Git/VHDL-MIPS32-CPU/src/mips_processor.vhdl
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
